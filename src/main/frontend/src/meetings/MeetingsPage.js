@@ -5,6 +5,7 @@ import MeetingsList from "./MeetingsList";
 export default function MeetingsPage({username}) {
     const [meetings, setMeetings] = useState([]);
     const [addingNewMeeting, setAddingNewMeeting] = useState(false);
+    const [addingParticipants, setAddingParticipants] = useState(false);
 
     async function handleNewMeeting(meeting) {
         const response = await fetch(`/api/meetings`, {
@@ -40,6 +41,7 @@ export default function MeetingsPage({username}) {
             setMeetings(nextMeetings);
         }
     }
+
 
     return (
         <div>
