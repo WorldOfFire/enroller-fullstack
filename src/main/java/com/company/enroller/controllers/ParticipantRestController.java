@@ -39,6 +39,7 @@ public class ParticipantRestController {
 		return new ResponseEntity<Participant>(participant, HttpStatus.OK);
 	}
 
+	//Dodawanie użytkownika ogólnie
     @RequestMapping(value = "", method = RequestMethod.POST)
     public ResponseEntity<?> addParticipant(@RequestBody Participant participant) {
         if (participantService.findByLogin(participant.getLogin()) != null) {
